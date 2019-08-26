@@ -22,38 +22,51 @@ Train data contains the impression logs during 2018/11/15 – 2018/12/13 along w
 You are provided with the following files:
 train.zip: This contains 3 files and description of each is given below:
 
-train.csv :
-Variable	Definition
-impression_id	AD impression id
-impression_time	Time of the impression at partner website
-user_id	user id
-app_code	Application Code for a partner website where the ad was shown
-os_version	Version of operating system
-is_4G	1-Using 4G, 0-No 4G
-is_click	(target) Whether user clicked the AD (1-click, 0-no click)
+_train.csv_:
+
+|Variable|Definition|
+|----------|:-------------:|
+|impression_id|AD impression id|
+|impression_time|Time of the impression at partner website|
+|user_id|user id|
+|app_code|Application Code for a partner website where the ad was shown|
+|os_version|Version of operating system|
+|is_4G|1-Using 4G, 0-No 4G|
+|is_click|(target) Whether user clicked the AD (1-click, 0-no click)|
 
 
-view_log.csv :
+_view_log.csv_:
 
-Variable	Definition
-server_time	Timestamp of the log
-device_type	Device type of the user
-session_id	Browser session id
-user_id	user id
-item_id	Item id
+|Variable|Definition|
+|----------|:-------------:|
+|server_time|Timestamp of the log|
+|device_type|Device type of the user|
+|session_id|Browser session id|
+|user_id|user id|
+|item_id|Item id|
 
-item_data.csv:
+_item_data.csv_:
 
-Variable	Definition
-item_id	Item id
-item_price	Price of the item
-category_1	Category depth 1
-category_2	Category depth 2
-category_3	Category depth 3
-product_type	anonymized item type  
-test.csv: test file contains the impressions for which the participants need to predict the click rate
+|Variable | Definition |
+|----------|:-------------:|
+|item_id | Item id|
+|item_price |Price of the item|
+|category_1	| Category depth 1|
+|category_2	| Category depth 2|
+|category_3	| Category depth 3|
+|product_type | anonymized item type  |
 
-sample_submission.csv: This file contains the format in which you have to submit your predictions.
+_test.csv_: test file contains the impressions for which the participants need to predict the click rate
 
-Evaluation Metric
+_sample_submission.csv_: This file contains the format in which you have to submit your predictions.
+
+### Evaluation Metric
 Submissions are evaluated on area under the ROC curve between the predicted probability and the observed target.
+
+### Public and Private Split
+Test data is further randomly divided into Public and Private data.
+
+Public leaderboard is based on first 3 days of data from the test dataset (2018/12/12 – 2018/12/14), while private leaderboard will be evaluated on remaining 4 days of data of the test dataset (2018/12/15 – 2018/12/18).
+
+* Your initial responses will be checked and scored on the Public data.
+* The final rankings would be based on your private score which will be published once the competition is over.
